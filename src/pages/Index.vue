@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="main">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
       <div class="row" style="max-width: 980px; margin: 0 auto; justify-content: space-between;">
         <div class="menu-btn" style="display: flex; align-items: center; justify-content: center;">
           <q-btn class="btn" flat label="Sobre Nós" />
-          <q-btn class="btn" flat label="Nossa História" />
+          <q-btn class="btn" flat label="Lentes" />
           <q-btn class="btn" flat label="Óculos" />
           <q-btn class="btn" flat label="Mais Vendidos" />
           <q-btn class="btn" flat label="Contato" />
@@ -45,6 +45,62 @@
         <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
       </q-carousel>
     </div>
+
+    <!--LENSES-->
+    <q-card style="max-width: 980px;">
+      <q-card-sections class="img-lens">
+        <img src="~/src/assets/lenses/zeiss-logo-rgb-high.png" alt="zeiss">
+        <img src="~/src/assets/lenses/varilux-logo-1.png" alt="varilux">
+        <img src="~/src/assets/lenses/download.png" alt="hoya">
+        <img src="" alt="">
+        <img src="" alt="">
+      </q-card-sections>
+      <q-card-sections>
+      </q-card-sections>
+    </q-card>
+
+    <!--O foco é você-->
+    <div>
+      <q-card class="my-card" flat bordered>
+        <q-card-section horizontal>
+          <q-card-section>
+            <q-card-section class="title">
+              O foco é você
+            </q-card-section>
+
+            <q-card-section class="text">
+              {{ lorem }}
+            </q-card-section>
+          </q-card-section>
+
+          <q-img
+            class="image col-5"
+            src="https://cdn.quasar.dev/img/parallax2.jpg"
+          />
+        </q-card-section>
+      </q-card>
+    </div>
+
+    <!--Nosso Espaço-->
+    <div>
+      <q-card class="my-card" flat bordered>
+        <q-card-section horizontal>
+          <q-img
+            class="image col-5"
+            src="https://cdn.quasar.dev/img/parallax2.jpg"
+          />
+          <q-card-section>
+            <q-card-section class="title">
+              Nosso Espaço
+            </q-card-section>
+
+            <q-card-section class="text">
+              {{ lorem }}
+            </q-card-section>
+          </q-card-section>
+        </q-card-section>
+      </q-card>
+    </div>
   </q-page>
 </template>
 
@@ -56,18 +112,34 @@ export default defineComponent({
   setup () {
     return {
       slide: ref(1),
-      autoplay: ref(true)
+      autoplay: ref(true),
+      lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }
   }
 })
 </script>
 
 <style scoped>
-.menu-items .row .menu-btn .btn {
+.main {
   font-family: 'Prosto One', cursive;
+}
+.menu-items .row .menu-btn .btn {
   color: #b1b1b1;
 }
 .menu-items .row .menu-btn .btn:hover {
   color: #180081;
+}
+
+.my-card .title {
+  color: #180081;
+  font-size: 5vh;
+}
+.img-lens {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-lens img {
+  max-width: 10vw;
 }
 </style>
