@@ -48,7 +48,7 @@
     </div>
 
     <!--LENSES-->
-    <q-card class="bg-yellow col-100">
+    <q-card class="card-lens bg-yellow col-100">
       <q-card-sections class="img-lens centralize sides">
         <img src="~/src/assets/lenses/essilor-logo.svg" alt="essilor">
         <img src="~/src/assets/lenses/hoya-logo.svg" alt="hoya">
@@ -56,53 +56,46 @@
         <img src="~/src/assets/lenses/varilux-logo.svg" alt="varilux">
         <img src="~/src/assets/lenses/zeiss-logo.svg" alt="zeiss">
       </q-card-sections>
-      <q-card-sections class="text-lens centralize sides">
+      <q-card-sections class="text centralize sides">
         <p>Trabalhamos com as melhores marcas nacionais e importadas</p>
       </q-card-sections>
     </q-card>
 
-    <!--CARD-YOU-->
-    <div class="col-100">
-      <q-card class="card-you" flat bordered>
-        <q-card-section class="sides" horizontal>
-          <q-card-section>
-            <q-card-section class="title">
-              O foco é você
-            </q-card-section>
-
-            <q-card-section class="text">
-              {{ lorem }}
-            </q-card-section>
+    <!--CARD-ABOUT-->
+    <q-card class="card-about sides" flat bordered>
+      <q-card-section class="section-you sides" horizontal>
+        <q-card-section>
+          <q-card-section class="title">
+            O foco é você
           </q-card-section>
 
-          <q-img
-            class="image col-5"
-            src="https://cdn.quasar.dev/img/parallax2.jpg"
-          />
-        </q-card-section>
-      </q-card>
-    </div>
-
-    <!--CARD-SPACE-->
-    <div class="col-100">
-      <q-card class="card-space" flat bordered>
-        <q-card-section class="sides" horizontal>
-          <q-img
-            class="image col-5"
-            src="https://cdn.quasar.dev/img/parallax2.jpg"
-          />
-          <q-card-section>
-            <q-card-section class="title">
-              Nosso Espaço
-            </q-card-section>
-
-            <q-card-section class="text">
-              {{ lorem }}
-            </q-card-section>
+          <q-card-section class="text">
+            {{ lorem }}
           </q-card-section>
         </q-card-section>
-      </q-card>
-    </div>
+
+        <q-img
+          class="image col-5"
+          src="https://cdn.quasar.dev/img/parallax2.jpg"
+        />
+      </q-card-section>
+
+      <q-card-section class="section-space sides" horizontal>
+        <q-img
+          class="image col-5"
+          src="https://cdn.quasar.dev/img/parallax2.jpg"
+        />
+        <q-card-section>
+          <q-card-section class="title">
+            Nosso Espaço
+          </q-card-section>
+
+          <q-card-section class="text">
+            {{ lorem }}
+          </q-card-section>
+        </q-card-section>
+      </q-card-section>
+    </q-card>
 
     <!--CARD-GLASSES-->
     <div class="col-100">
@@ -179,6 +172,7 @@ export default defineComponent({
 /*GERAL*/
 .main {
   font-family: 'Prosto One', cursive;
+  background-color: #eeeeee;
 }
 .sides {
   max-width: 980px;
@@ -193,6 +187,9 @@ export default defineComponent({
   color: #180081;
   font-size: 5vh;
   justify-content: space-around;
+}
+.text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /*HEADER*/
@@ -235,21 +232,47 @@ export default defineComponent({
 }
 
 /*LENSES*/
-.img-lens {
+.card-lens .img-lens {
   justify-content: space-around;
   height: 15vh;
 }
-.img-lens img {
+.card-lens .img-lens img {
   max-height: 8vh;
   max-width: 10vw;
 }
-.text-lens {
+.card-lens .text {
   justify-content: space-around;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 3vh;
   font-weight: bold;
   text-transform: uppercase;
   color: #0c003f;
+}
+
+/*CARD-ABOUT*/
+.card-about {
+  margin-top: 10vh;
+}
+.card-about .section-you {
+  margin: 5vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+.card-about .section-you .title {
+  text-align: start;
+}
+.card-about .section-you .text {
+  text-align: justify;
+}
+.card-about .section-space {
+  margin: 5vh;
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+}
+.card-about .section-space .title {
+  text-align: end;
+}
+.card-about .section-space .text {
+  text-align: justify;
 }
 
 /*CARD-GLASSES*/
