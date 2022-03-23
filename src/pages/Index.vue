@@ -74,16 +74,16 @@
           </q-card-section>
         </q-card-section>
 
-        <q-img
+        <q-parallax
           class="image col-5"
-          src="https://cdn.quasar.dev/img/parallax2.jpg"
+          src="~/src/assets/about/superotica-pessoas.jpeg"
         />
       </q-card-section>
 
       <q-card-section class="section-space sides" horizontal>
-        <q-img
+        <q-parallax
           class="image col-5"
-          src="https://cdn.quasar.dev/img/parallax2.jpg"
+          src="~/src/assets/about/superotica-asa-norte.jpg"
         />
         <q-card-section>
           <q-card-section class="title">
@@ -273,6 +273,10 @@ export default defineComponent({
 }
 .card-about .section-space .text {
   text-align: justify;
+}
+.card-about .image {
+  max-height: 50vh;
+  border-radius: 10vw;
 }
 
 /*CARD-GLASSES*/
