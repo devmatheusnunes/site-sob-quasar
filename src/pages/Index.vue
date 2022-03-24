@@ -151,7 +151,7 @@
       </q-card>
     </div>-->
 
-    <!--CONTACT-->
+    <!--CONTACT
     <q-card class="card-contact">
       <q-card-sections class="sides centralize title">
         <div>Encontre nossas lojas</div>
@@ -172,7 +172,7 @@
           <div class="contact">loja 10</div>
         </q-card-sections>
       </q-card-sections>
-    </q-card>
+    </q-card>-->
 
     <!--BASEBOARD-->
     <q-card class="card-baseboard">
