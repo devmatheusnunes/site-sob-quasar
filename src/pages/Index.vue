@@ -30,8 +30,8 @@
           <q-btn class="btn" flat label="Sobre Nós" />
           <q-btn class="btn" flat label="Lentes" />
           <q-btn class="btn" flat label="Óculos" />
-          <q-btn class="btn" flat label="Mais Vendidos" />
-          <q-btn class="btn" flat label="Contato" />
+          <q-btn class="btn" flat label="Nossas Lojas" />
+          <q-btn class="btn" flat label="Nossas Redes" />
         </div>
       </div>
     </div>
@@ -106,7 +106,10 @@
         <div class="sides">
           <div class="card-glass-sections centralize">
             <q-img src="~/src/assets/carousel/man-glasses.jpg" alt="man">
-              <div class="title-glass-img centralize">Masculino</div>
+              <div class="title-glass-img centralize">
+                <div class="centralize">Armações</div>
+                <div class="centralize">Masculinas</div>
+              </div>
             </q-img>
             <q-img src="~/src/assets/carousel/woman-glasses.jpg" alt="woman">
               <div class="title-glass-img centralize">Feminino</div>
@@ -219,6 +222,7 @@ export default defineComponent({
 /*GERAL*/
 .main {
   font-family: 'Prosto One', cursive;
+  background-color: #fcffe4;
 }
 .sides {
   max-width: 980px;
