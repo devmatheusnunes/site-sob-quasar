@@ -7,9 +7,9 @@
     <!--HEADER-->
     <div class="header col-100 bg-yellow">
       <div class="header-contents centralize row sides">
-          <img class="q-ma-md" src="~/src/assets/header/logo_superotica_horizontal_02.svg" alt="logo" />
+          <img class="q-ma-md" src="~/src/assets/header/logo_superotica_horizontal_02.svg" alt="logo-horizontal" />
 
-          <div class="header-icons">
+          <div class="header-icons centralize">
             <a href="https://www.instagram.com/superoticabrasil/">
               <img class="q-mx-sm" src="~/src/assets/header/instagram-bold.png" alt="instagram"  />
             </a>
@@ -98,8 +98,8 @@
     </q-card>
 
     <!--CARD-GLASSES-->
-    <div class="col-100">
-      <div class="card-glasses">
+    <div class="card-glasses col-100">
+      <div class="card-glass">
         <div class="title sides centralize">
           Encontre seu perfil
         </div>
@@ -150,6 +150,53 @@
         </q-card-sections>
       </q-card>
     </div>-->
+
+    <!--CONTACT-->
+    <q-card class="card-contact">
+      <q-card-sections class="sides centralize title">
+        <div>Encontre nossas lojas</div>
+      </q-card-sections>
+      <q-card-sections class="sides centralize">
+        <q-card-sections class="sections-contact sides">
+          <div class="contact">loja 1</div>
+          <div class="contact">loja 2</div>
+          <div class="contact">loja 3</div>
+          <div class="contact">loja 4</div>
+          <div class="contact">loja 5</div>
+        </q-card-sections>
+        <q-card-sections class="sections-contact sides">
+          <div class="contact">loja 6</div>
+          <div class="contact">loja 7</div>
+          <div class="contact">loja 8</div>
+          <div class="contact">loja 9</div>
+          <div class="contact">loja 10</div>
+        </q-card-sections>
+      </q-card-sections>
+    </q-card>
+
+    <!--BASEBOARD-->
+    <q-card class="card-baseboard">
+      <q-card-sections class="sides">
+        <div class="title centralize">NOS SIGA NAS REDES SOCIAIS</div>
+
+        <div class="header-icons centralize">
+          <a href="https://www.instagram.com/superoticabrasil/">
+            <img class="q-mx-sm" src="~/src/assets/header/instagram-bold.png" alt="instagram"  />
+          </a>
+          <a href="https://www.facebook.com/SuperOticaBrasil">
+            <img class="q-mx-sm" src="~/src/assets/header/facebook.png" alt="facebook"  />
+          </a>
+          <a href="">
+            <img class="q-mx-sm" src="~/src/assets/header/whatsapp.png" alt="whatsapp" />
+          </a>
+        </div>
+        <div class="centralize">
+          <img class="q-ma-md" src="~/src/assets/header/logo_superotica_centralizada_02.svg" alt="logo-central"/>
+        </div>
+        <div class="text centralize">Copyright 2022© Todos os direitos reservados | SUPERÓTICA BRASIL</div>
+        <div class="text centralize">Desenvolvido por: Matheus Nunes (dev.matheusnunes@gmail.com)</div>
+      </q-card-sections>
+    </q-card>
   </q-page>
 </template>
 
@@ -172,7 +219,6 @@ export default defineComponent({
 /*GERAL*/
 .main {
   font-family: 'Prosto One', cursive;
-  background-color: #eeeeee;
 }
 .sides {
   max-width: 980px;
@@ -202,18 +248,14 @@ export default defineComponent({
 .header .header-contents img {
   max-width: 14vw;
 }
-.header .header-icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.header .header-icons a img {
+.header .header-icons a img, .card-baseboard .header-icons a img {
   max-width: 2.2vw;
 }
 
 /*MENU*/
 .menu-items {
   max-height: 6vh;
+  border-bottom: 0.2vh #0c003f solid;
 }
 .menu-items .menu-case {
   justify-content: space-between;
@@ -257,22 +299,20 @@ export default defineComponent({
   padding-top: 10vh;
   padding-bottom: 10vh;
 }
-.card-about .section-you .title {
-  text-align: start;
-}
-.card-about .section-you .text {
-  text-align: justify;
-}
 .card-about .section-space {
   margin: 5vh;
   padding-top: 5vh;
   padding-bottom: 10vh;
 }
+.card-about .section-you .title {
+  text-align: start;
+}
 .card-about .section-space .title {
   text-align: end;
 }
-.card-about .section-space .text {
+.card-about .section-you .text, .card-about .section-space .text {
   text-align: justify;
+  font-size: 1.2vw;
 }
 .card-about .image {
   max-height: 50vh;
@@ -280,17 +320,49 @@ export default defineComponent({
 }
 
 /*CARD-GLASSES*/
-.card-glasses .card-glass-sections q-img {
+.card-glasses {
+  margin-top: 15vh;
+}
+.card-glasses .card-glass .card-glass-sections {
+  margin-top: 5vh;
+}
+.card-glasses .card-glass .card-glass-sections q-img {
   max-width: 30vw;
 }
 .title-glass-img {
+  font-size: 6vh;
+  text-transform: uppercase;
   width: 100%;
   height: 100%;
 }
-
 .title-glass-img:hover {
   background: none;
   color: #0c003f;
 }
 
+/*CONTACT*/
+.card-contact {
+  margin-top: 10vh;
+}
+
+/*BASEBOARD*/
+.card-baseboard {
+  margin-top: 10vh;
+  background-color: yellow;
+}
+.card-baseboard .title {
+  padding-top: 5vh;
+  font-size: 1.5vw;
+}
+.card-baseboard .header-icons {
+  padding-top: 2vh;
+}
+.card-baseboard img {
+  max-width: 15vw;
+}
+
+.card-baseboard .text {
+  font-weight: bold;
+  color: #0c003f;
+}
 </style>
