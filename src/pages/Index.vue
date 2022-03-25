@@ -105,17 +105,23 @@
         </div>
         <div class="sides">
           <div class="card-glass-sections centralize">
-            <q-img src="~/src/assets/carousel/man-glasses.jpg" alt="man">
-              <div class="title-glass-img centralize">
-                <div class="centralize">Armações</div>
-                <div class="centralize">Masculinas</div>
+            <q-img class="img" src="~/src/assets/carousel/man-glasses.jpg" alt="man">
+              <div class="title-glass-img ">
+                <div class="title-1 centralize">Armações</div>
+                <div class="title-2 centralize">Masculinas</div>
               </div>
             </q-img>
             <q-img src="~/src/assets/carousel/woman-glasses.jpg" alt="woman">
-              <div class="title-glass-img centralize">Feminino</div>
+              <div class="title-glass-img">
+                <div class="title-1 centralize">Armações</div>
+                <div class="title-2 centralize">Feminino</div>
+              </div>
             </q-img>
             <q-img src="~/src/assets/carousel/baby-glasses.jpg" alt="kid">
-              <div class="title-glass-img centralize">Infantil</div>
+              <div class="title-glass-img">
+                <div class="title-1 centralize">Armações</div>
+                <div class="title-2 centralize">Infantil</div>
+              </div>
             </q-img>
           </div>
         </div>
@@ -334,16 +340,21 @@ export default defineComponent({
   max-width: 30vw;
 }
 .title-glass-img {
-  font-size: 6vh;
-  text-transform: uppercase;
   width: 100%;
   height: 100%;
+  text-transform: uppercase;
+  padding: 30%;
 }
 .title-glass-img:hover {
+  transition-duration: 0.5s;
   background: none;
-  color: #0c003f;
 }
-
+.title-glass-img .title-1 {
+  font-size: 2.5vh;
+}
+.title-glass-img .title-2 {
+  font-size: 4vh;
+}
 /*CONTACT*/
 .card-contact {
   margin-top: 10vh;
