@@ -1,41 +1,5 @@
 <template>
   <q-page class="main">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
-
-    <!--HEADER-->
-    <div class="header col-100 bg-yellow">
-      <div class="header-contents centralize row sides">
-          <img class="q-ma-md" src="~/src/assets/header/logo_superotica_horizontal_02.svg" alt="logo-horizontal" />
-
-          <div class="header-icons centralize">
-            <a href="https://www.instagram.com/superoticabrasil/">
-              <img class="q-mx-sm" src="~/src/assets/header/instagram-bold.png" alt="instagram"  />
-            </a>
-            <a href="https://www.facebook.com/SuperOticaBrasil">
-              <img class="q-mx-sm" src="~/src/assets/header/facebook.png" alt="facebook"  />
-            </a>
-            <a href="">
-              <img class="q-mx-sm" src="~/src/assets/header/whatsapp.png" alt="whatsapp" />
-            </a>
-          </div>
-      </div>
-    </div>
-
-    <!--MENU-->
-    <div class="menu-items centralize col-100 bg-white">
-      <div class="menu-case row sides">
-        <div class="menu-btn centralize">
-          <q-btn class="btn" flat label="Sobre Nós" />
-          <q-btn class="btn" flat label="Lentes" />
-          <q-btn class="btn" flat label="Óculos" />
-          <q-btn class="btn" flat label="Nossas Lojas" />
-          <q-btn class="btn" flat label="Nossas Redes" />
-        </div>
-      </div>
-    </div>
-
     <!--CAROUSEL-->
     <div>
       <q-carousel class="carousel" animated v-model="slide" navigation infinite :autoplay="autoplay" arrows transition-prev="slide-right" transition-next="slide-left" @mouseenter="autoplay = false" @mouseleave="autoplay = true">
@@ -248,35 +212,6 @@ export default defineComponent({
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/*HEADER*/
-.header {
-  max-height: 12vh;
-}
-.header .header-contents {
-  justify-content: space-between;
-}
-.header .header-contents img {
-  max-width: 14vw;
-}
-.header .header-icons a img, .card-baseboard .header-icons a img {
-  max-width: 2.2vw;
-}
-
-/*MENU*/
-.menu-items {
-  max-height: 6vh;
-  border-bottom: 0.2vh #0c003f solid;
-}
-.menu-items .menu-case {
-  justify-content: space-between;
-}
-.menu-items .menu-case .menu-btn .btn {
-  color: #b1b1b1;
-}
-.menu-items .row .menu-btn .btn:hover {
-  color: #180081;
-}
-
 /*CAROUSEL*/
 .carousel {
   min-height: 82.5vh;
@@ -326,7 +261,7 @@ export default defineComponent({
 }
 .card-about .image {
   max-height: 50vh;
-  border-radius: 10vw;
+  border-radius: 5vw;
 }
 
 /*CARD-GLASSES*/
