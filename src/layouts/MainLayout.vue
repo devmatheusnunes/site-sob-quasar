@@ -27,11 +27,11 @@
     <div class="menu-items centralize col-100 bg-white">
       <div class="menu-case row sides">
         <div class="menu-btn centralize">
-          <q-btn class="btn" flat label="Sobre Nós" />
-          <q-btn class="btn" flat label="Lentes" />
-          <q-btn class="btn" flat label="Óculos" />
-          <q-btn class="btn" flat label="Nossas Lojas" to="stores" />a
-          <q-btn class="btn" flat label="Nossas Redes" />
+          <q-btn class="btn" flat label="Sobre Nós" to="about" />
+          <q-btn class="btn" flat label="Lentes" to="lenses"/>
+          <q-btn class="btn" flat label="Óculos" to="glasses" />
+          <q-btn class="btn" flat label="Nossas Lojas" to="stores" />
+          <q-btn class="btn" flat label="Nossas Redes" to="network" />
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@ export default defineComponent({
 .header .header-contents img {
   max-width: 14vw;
 }
-.header .header-icons a img, .card-baseboard .header-icons a img {
+.header .header-icons a img {
   max-width: 2.2vw;
 }
 

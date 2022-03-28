@@ -152,7 +152,7 @@
       <q-card-sections class="sides">
         <div class="title centralize">NOS SIGA NAS REDES SOCIAIS</div>
 
-        <div class="header-icons centralize">
+        <div class="baseboard-icons centralize">
           <a href="https://www.instagram.com/superoticabrasil/">
             <img class="q-mx-sm" src="~/src/assets/header/instagram-bold.png" alt="instagram"  />
           </a>
@@ -304,13 +304,15 @@ export default defineComponent({
   padding-top: 5vh;
   font-size: 1.5vw;
 }
-.card-baseboard .header-icons {
+.card-baseboard .baseboard-icons {
   padding-top: 2vh;
+}
+.card-baseboard .baseboard-icons a img {
+  max-width: 2.2vw;
 }
 .card-baseboard img {
   max-width: 15vw;
 }
-
 .card-baseboard .text {
   font-weight: bold;
   color: #0c003f;
