@@ -9,16 +9,8 @@
       <div class="header-contents centralize row sides">
           <img class="q-ma-md" src="~/src/assets/header/logo_superotica_horizontal_02.svg" alt="logo-horizontal" @click="$router.push('/')" />
 
-          <div class="header-icons centralize">
-            <a href="https://www.instagram.com/superoticabrasil/">
-              <img class="q-mx-sm" src="~/src/assets/header/instagram-bold.png" alt="instagram"  />
-            </a>
-            <a href="https://www.facebook.com/SuperOticaBrasil">
-              <img class="q-mx-sm" src="~/src/assets/header/facebook.png" alt="facebook"  />
-            </a>
-            <a href="">
-              <img class="q-mx-sm" src="~/src/assets/header/whatsapp.png" alt="whatsapp" />
-            </a>
+          <div class="header-login centralize">
+            <q-btn class="login" icon="person" label="Entrar" flat to="login" />
           </div>
       </div>
     </div>
@@ -27,11 +19,11 @@
     <div class="menu-items centralize col-100 bg-white">
       <div class="menu-case row sides">
         <div class="menu-btn centralize">
+          <q-btn class="btn" flat label="Home" to="/" />
           <q-btn class="btn" flat label="Sobre Nós" to="about" />
           <q-btn class="btn" flat label="Lentes" to="lenses"/>
           <q-btn class="btn" flat label="Óculos" to="glasses" />
           <q-btn class="btn" flat label="Nossas Lojas" to="stores" />
-          <q-btn class="btn" flat label="Nossas Redes" to="network" />
         </div>
       </div>
     </div>
@@ -88,8 +80,11 @@ export default defineComponent({
 .header .header-contents img {
   max-width: 14vw;
 }
-.header .header-icons a img {
+.header .header-login a img {
   max-width: 2.2vw;
+}
+.header .header-login .login {
+  color: #0c003f
 }
 
 /*MENU*/

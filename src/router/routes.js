@@ -8,11 +8,18 @@ const routes = [
       { path: 'about', component: () => import('pages/About.vue') },
       { path: 'lenses', component: () => import('pages/Lenses.vue') },
       { path: 'glasses', component: () => import('pages/Glasses.vue') },
-      { path: 'stores', component: () => import('pages/Stores.vue') },
-      { path: 'network', component: () => import('pages/Network.vue') }
+      { path: 'stores', component: () => import('pages/Stores.vue') }
     ]
   },
 
+  {
+    path: '/login',
+    component: () => import('layouts/AuthLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/auth/Login.vue') },
+      { path: 'register', component: () => import('pages/auth/Register.vue') }
+    ]
+  },
   // Always leave this as last one,
   // but you can also remove it
   {
