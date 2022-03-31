@@ -46,7 +46,7 @@
             text-color="white"
             label="voltar"
             rounded
-            to="/"
+            @click="$router.replace('/')"
           />
           <q-btn
             class="btn"
@@ -65,6 +65,7 @@
             label="Esqueci a Senha"
             rounded
             flat
+            :to="{ name: 'forgot-password' }"
           />
         </q-card-sections>
       </q-card>

@@ -36,7 +36,6 @@ export default route(function (/* { store, ssrContext } */) {
     ) {
       const accessToken = new URLSearchParams(to.hash)
       const token = accessToken.get('#access_token')
-      console.log('token')
       return { name: 'reset-password', query: { token } }
     }
 

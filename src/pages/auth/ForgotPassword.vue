@@ -1,34 +1,20 @@
 <template>
   <q-page class="main flex flex-center">
-    <form @submit.prevent="handleRegister">
+    <form @submit.prevent="handleForgotPassword">
       <!--CARD LOGIN-->
       <q-card class="card-login">
         <q-card-sections class="card-logo centralize">
           <img src="~/src/assets/header/logo_superotica_horizontal_02.svg" alt="logo-horizontal">
         </q-card-sections>
         <q-card-sections class="card-input">
-          <div class="title centralize">CADASTRO</div>
-          <q-input
-            class="input q-mt-md"
-            outlined
-            rounded
-            dense
-            v-model="form.name"
-            label="Nome"
-            lazy-rules
-            :rules="[val => (val && val.length > 0) || 'Por favor, insira seu nome']"
-          >
-            <template v-slot:prepend>
-              <q-icon name="person" />
-            </template>
-          </q-input>
+          <div class="title centralize">RECUPERAÇÃO DE SENHA</div>
 
           <q-input
             class="input"
             outlined
             rounded
             dense
-            v-model="form.email"
+            v-model="email"
             label="E-mail"
             type="email"
             lazy-rules
@@ -39,21 +25,6 @@
             </template>
           </q-input>
 
-          <q-input
-            class="input"
-            outlined
-            rounded
-            dense
-            v-model="form.password"
-            label="Senha"
-            type="password"
-            lazy-rules
-            :rules="[val => (val && val.length >= 6) || 'Por favor, insira uma senha válida']"
-          >
-            <template v-slot:prepend>
-              <q-icon name="lock" />
-            </template>
-          </q-input>
         </q-card-sections>
         <q-card-sections class="card-btn centralize">
           <q-btn
@@ -68,7 +39,7 @@
             class="btn"
             color="positive"
             text-color="white"
-            label="Registrar"
+            label="Enviar"
             rounded
             type="submit"
           />
@@ -82,36 +53,27 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import useAuthUser from 'src/composables/UseAuthUser'
-import { useRouter } from 'vue-router'
 
 export default defineComponent({
-  name: 'PageRegister',
+  name: 'PageForgotPassword',
 
   setup () {
-    const router = useRouter()
-    const { register } = useAuthUser()
+    const { sendPasswordRestEmail } = useAuthUser()
 
-    const form = ref({
-      name: '',
-      email: '',
-      password: ''
-    })
+    const email = ref('')
 
-    const handleRegister = async () => {
+    const handleForgotPassword = async () => {
       try {
-        await register(form.value)
-        router.push({
-          name: 'email-confirmation',
-          query: { email: form.value.email }
-        })
+        await sendPasswordRestEmail(email.value)
+        alert(`Email enviado para ${email.value}`)
       } catch (error) {
         alert(error)
       }
     }
 
     return {
-      form,
-      handleRegister
+      email,
+      handleForgotPassword
     }
   }
 })
@@ -156,11 +118,13 @@ export default defineComponent({
   padding: 2vh;
 }
 .card-login .card-input .title {
+  margin-top: 2vh;
   font-size: 3vh;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
 }
 .card-login .card-input .input {
+  margin-top: 3vh;
   margin-left: -1vw;
   margin-right: -1vw;
 }
@@ -168,10 +132,8 @@ export default defineComponent({
   justify-content: space-between;
 }
 .card-login .card-btn .btn {
+  margin-top: 2vh;
+  margin-bottom: -2vh;
   min-width: 10vw;
-}
-.card-login .reset-btn {
-  margin-top: 3vh;
-  margin-bottom: -3vh;
 }
 </style>

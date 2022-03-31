@@ -1,50 +1,20 @@
 <template>
   <q-page class="main flex flex-center">
-    <form @submit.prevent="handleRegister">
+    <form @submit.prevent="handlePasswordReset">
       <!--CARD LOGIN-->
       <q-card class="card-login">
         <q-card-sections class="card-logo centralize">
           <img src="~/src/assets/header/logo_superotica_horizontal_02.svg" alt="logo-horizontal">
         </q-card-sections>
         <q-card-sections class="card-input">
-          <div class="title centralize">CADASTRO</div>
-          <q-input
-            class="input q-mt-md"
-            outlined
-            rounded
-            dense
-            v-model="form.name"
-            label="Nome"
-            lazy-rules
-            :rules="[val => (val && val.length > 0) || 'Por favor, insira seu nome']"
-          >
-            <template v-slot:prepend>
-              <q-icon name="person" />
-            </template>
-          </q-input>
+          <div class="title centralize">Nova Senha</div>
 
           <q-input
             class="input"
             outlined
             rounded
             dense
-            v-model="form.email"
-            label="E-mail"
-            type="email"
-            lazy-rules
-            :rules="[val => (val && val.length > 0) || 'Por favor, insira seu email']"
-          >
-            <template v-slot:prepend>
-              <q-icon name="email" />
-            </template>
-          </q-input>
-
-          <q-input
-            class="input"
-            outlined
-            rounded
-            dense
-            v-model="form.password"
+            v-model="password"
             label="Senha"
             type="password"
             lazy-rules
@@ -60,7 +30,7 @@
             class="btn"
             color="negative"
             text-color="white"
-            label="voltar"
+            label="cancelar"
             rounded
             @click="$router.replace('login')"
           />
@@ -68,7 +38,7 @@
             class="btn"
             color="positive"
             text-color="white"
-            label="Registrar"
+            label="salvar"
             rounded
             type="submit"
           />
@@ -82,36 +52,32 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import useAuthUser from 'src/composables/UseAuthUser'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 export default defineComponent({
-  name: 'PageRegister',
+  name: 'PageResetPassword',
 
   setup () {
+    const { resertPassword } = useAuthUser()
     const router = useRouter()
-    const { register } = useAuthUser()
+    const route = useRoute()
+    const token = route.query.token
 
-    const form = ref({
-      name: '',
-      email: '',
-      password: ''
-    })
+    const password = ref('')
 
-    const handleRegister = async () => {
+    const handlePasswordReset = async () => {
       try {
-        await register(form.value)
-        router.push({
-          name: 'email-confirmation',
-          query: { email: form.value.email }
-        })
+        await resertPassword(token, password.value)
+        alert('Nova senha salva com sucesso!')
+        router.push({ name: 'login' })
       } catch (error) {
         alert(error)
       }
     }
 
     return {
-      form,
-      handleRegister
+      password,
+      handlePasswordReset
     }
   }
 })
@@ -156,11 +122,13 @@ export default defineComponent({
   padding: 2vh;
 }
 .card-login .card-input .title {
+  margin-top: 2vh;
   font-size: 3vh;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
 }
 .card-login .card-input .input {
+  margin-top: 3vh;
   margin-left: -1vw;
   margin-right: -1vw;
 }
@@ -169,9 +137,6 @@ export default defineComponent({
 }
 .card-login .card-btn .btn {
   min-width: 10vw;
-}
-.card-login .reset-btn {
-  margin-top: 3vh;
   margin-bottom: -3vh;
 }
 </style>
